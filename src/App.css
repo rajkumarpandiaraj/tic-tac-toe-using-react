@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  line-height: 1.4;
+  position: relative;
+  font-size: 18px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
 }
+.board{
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.cell{
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+div:nth-child(1),
+div:nth-child(2),
+div:nth-child(3){
+  border-top: none;
+}
+div:nth-child(3n+3){
+  border-right: none;
+}
+div:nth-child(1),
+div:nth-child(4),
+div:nth-child(7){
+  border-left: none;
+}
+div:nth-child(7),
+div:nth-child(8),
+div:nth-child(9){
+  border-bottom: none;
+}
+.message-box{
+  display: none;
+  position: absolute;
+  
+  background: #000;
+}
+.message{
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+h1{
+  font-size: 4rem;
+}
+.restart-btn{
+  padding: 0.5em 1em;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+
+  background-color: rgb(43, 43, 173);
 }
